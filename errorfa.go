@@ -14,8 +14,11 @@ type (
 	}
 )
 
-func New(text, farsiText string) {
-
+func New(text, farsiText string) ErrorFarsi {
+	return &MyError{
+		Text:      text,
+		TextFarsi: farsiText,
+	}
 }
 
 func (e *MyError) Error() string {
